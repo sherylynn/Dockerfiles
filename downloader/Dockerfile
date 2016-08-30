@@ -3,5 +3,5 @@ FROM sherylynn/wget
 MAINTAINER Sherylynn <352281674@qq.com>
 
 # 输入下载地址
-ENV DOWNLOAD_URL https://qemu.weilnetz.de/w64/qemu-w64-setup-20160823.exe
+ENV DOWNLOAD_URL http://dl-cdn.alpinelinux.org/alpine/v3.4/releases/x86_64/alpine-extended-3.4.3-x86_64.iso
 RUN wget -q --no-check-certificate ${DOWNLOAD_URL}
