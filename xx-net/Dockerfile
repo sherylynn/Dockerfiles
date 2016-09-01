@@ -12,6 +12,8 @@ RUN mkdir -p /opt && \
     tar -xzf ${XX_VERSION} && \
     rm ${XX_VERSION} && \
     ls
+RUN apk --update add --no-cache tini
+ENTRYPOINT ["/sbin/tini", "--"]
 #    wget -q ${ANDROID_TOOLS_URL} && \
 #    unzip -n ${ANDROID_TOOLS_FILENAME} -d android-sdk-linux/tools && \
 #    rm ${ANDROID_TOOLS_FILENAME} && \
