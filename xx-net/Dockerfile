@@ -11,6 +11,7 @@ RUN mkdir -p /opt && \
     wget -q --no-check-certificate ${DOWNLOAD_URL} && \
     tar -xzf ${XX_VERSION} && \
     rm ${XX_VERSION} && \
+    ls
 #    wget -q ${ANDROID_TOOLS_URL} && \
 #    unzip -n ${ANDROID_TOOLS_FILENAME} -d android-sdk-linux/tools && \
 #    rm ${ANDROID_TOOLS_FILENAME} && \
