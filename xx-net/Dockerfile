@@ -6,8 +6,9 @@ MAINTAINER Sherylynn <352281674@qq.com>
 RUN apk --update add --no-cache libffi-dev py-openssl
 ENV XX_VERSION 3.2.6
 ENV DOWNLOAD_URL https://codeload.github.com/XX-net/XX-Net/tar.gz/${XX_VERSION}
-RUN cd /opt && \
-    wget -q --no-check-certificate ${DOWNLOAD_URL}
+RUN mkdir -p /opt && \
+    cd /opt && \
+    wget -q --no-check-certificate ${DOWNLOAD_URL} && \
     tar -xzf ${XX_VERSION} && \
     rm ${XX_VERSION} && \
 #    wget -q ${ANDROID_TOOLS_URL} && \
