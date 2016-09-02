@@ -13,6 +13,6 @@ RUN wget -q --no-check-certificate ${DOWNLOAD_URL} && \
 #    rm -rf /XX-Net/code/default/python27/ && \
     rm ${XX_VERSION}
 VOLUME ["/XX-Net/data"]
-CMD ["/usr/bin/python2","/XX-Net/code/default/start.py"]
+CMD ["python","/XX-Net/code/default/launcher/start.py"]
 EXPOSE 8085 8086 8087
 ENV LANG zh_CN.UTF-8
