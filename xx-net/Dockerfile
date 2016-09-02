@@ -3,17 +3,16 @@ FROM sherylynn/wget
 MAINTAINER Sherylynn <352281674@qq.com>
 
 # install packages
-RUN apk --update add --no-cache libffi-dev py-pip python3
+RUN apk --update add --no-cache libffi-dev py-cffi
 ENV XX_VERSION 3.2.6
 ENV DOWNLOAD_URL https://codeload.github.com/XX-net/XX-Net/tar.gz/${XX_VERSION}
 RUN mkdir -p /opt && \
     cd /opt && \
     wget -q --no-check-certificate ${DOWNLOAD_URL} && \
     tar -xzf ${XX_VERSION} && \
+    mv XX-Net-{XX_VERSION} XX-Net && \
     rm ${XX_VERSION} && \
     ls
-RUN apk --update add --no-cache tini
-ENTRYPOINT ["/sbin/tini", "--"]
 #    wget -q ${ANDROID_TOOLS_URL} && \
 #    unzip -n ${ANDROID_TOOLS_FILENAME} -d android-sdk-linux/tools && \
 #    rm ${ANDROID_TOOLS_FILENAME} && \
