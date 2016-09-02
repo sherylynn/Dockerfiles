@@ -10,7 +10,7 @@ RUN mkdir -p /opt && \
     cd /opt && \
     wget -q --no-check-certificate ${DOWNLOAD_URL} && \
     tar -xzf ${XX_VERSION} && \
-    mv XX-Net-{XX_VERSION} XX-Net && \
+    mv XX-Net-${XX_VERSION} XX-Net && \
     rm ${XX_VERSION} && \
     ls
 #    wget -q ${ANDROID_TOOLS_URL} && \
