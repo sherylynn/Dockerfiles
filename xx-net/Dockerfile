@@ -6,17 +6,13 @@ MAINTAINER Sherylynn <352281674@qq.com>
 RUN apk --update add --no-cache libffi-dev py-cffi
 ENV XX_VERSION 3.2.6
 ENV DOWNLOAD_URL https://codeload.github.com/XX-net/XX-Net/tar.gz/${XX_VERSION}
-RUN mkdir -p /opt && \
-    cd /opt && \
-    wget -q --no-check-certificate ${DOWNLOAD_URL} && \
+RUN wget -q --no-check-certificate ${DOWNLOAD_URL} && \
     tar -xzf ${XX_VERSION} && \
     mv XX-Net-${XX_VERSION} XX-Net && \
-    rm ${XX_VERSION} && \
-    ls
-#    wget -q ${ANDROID_TOOLS_URL} && \
-#    unzip -n ${ANDROID_TOOLS_FILENAME} -d android-sdk-linux/tools && \
-#    rm ${ANDROID_TOOLS_FILENAME} && \
-#    wget -q ${ANDROID_PLATFORM_URL} && \
-#    unzip -n ${ANDROID_PLATFORM_FILENAME} -d  && \
-#    rm ${ANDROID_PLATFORM_FILENAME} && \
+    rm -rf /XX-Net/code/default/gae_proxy/server/ && \
+    rm -rf /XX-Net/code/default/python27/ && \
+    rm ${XX_VERSION}
+VOLUME ["/XX-Net/data"]
+CMD ["/usr/bin/python2","/XX-Net/code/default/start.py"]
+EXPOSE 8085 8086 8087
 ENV LANG zh_CN.UTF-8
