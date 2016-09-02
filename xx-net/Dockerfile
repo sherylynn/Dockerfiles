@@ -3,7 +3,7 @@ FROM sherylynn/wget
 MAINTAINER Sherylynn <352281674@qq.com>
 
 # install packages
-RUN apk --update add --no-cache libffi-dev py-openssl nss-tools
+RUN apk --update add --no-cache libffi-dev py-pip
 ENV XX_VERSION 3.2.6
 ENV DOWNLOAD_URL https://codeload.github.com/XX-net/XX-Net/tar.gz/${XX_VERSION}
 RUN mkdir -p /opt && \
