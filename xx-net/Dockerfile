@@ -10,6 +10,7 @@ RUN wget -q --no-check-certificate ${DOWNLOAD_URL} && \
     tar -xzf ${XX_VERSION} && \
     mv XX-Net-${XX_VERSION} XX-Net && \
     rm -rf /XX-Net/code/default/gae_proxy/server/ && \
+#    rm -rf /XX-Net/code/default/python27/ && \
     rm ${XX_VERSION}
 VOLUME ["/XX-Net/data"]
 CMD ["/usr/bin/python2","/XX-Net/code/default/start.py"]
