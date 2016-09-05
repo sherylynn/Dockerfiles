@@ -5,8 +5,7 @@ MAINTAINER Sherylynn <352281674@qq.com>
 # install openssl and the complete wget
 RUN apk --update add --no-cache git
 
-ENV V2RAY_VERSION v1.24.3
-#ENV V2RAY_VERSION custom
+ENV V2RAY_VERSION custom
 ENV V2RAY /v2ray
 ENV V2RAY_CONTENT $V2RAY/content
 ENV V2RAY_CONFIG_CONTENT $V2RAY_CONTENT/config
@@ -17,7 +16,6 @@ RUN go get -u v2ray.com/core/...
 RUN rm -f $GOPATH/bin/build
 RUN go install v2ray.com/core/tools/build
 RUN $GOPATH/bin/build
-RUN ls $GOPATH/bin/
 RUN mv $GOPATH/bin/v2ray-$V2RAY_VERSION-linux-64/v2ray /usr/local/bin/
 
 RUN mkdir -p $V2RAY_CONFIG_CONTENT && \
