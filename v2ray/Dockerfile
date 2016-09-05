@@ -1,10 +1,6 @@
 # Pull base image.
 FROM golang:latest
 MAINTAINER Sherylynn <352281674@qq.com>
-
-# install openssl and the complete wget
-RUN apk --update add --no-cache git
-
 ENV V2RAY_VERSION v1.24.3
 #ENV V2RAY_VERSION custom
 ENV V2RAY /v2ray
