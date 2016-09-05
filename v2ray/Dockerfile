@@ -1,5 +1,5 @@
 # Pull base image.
-FROM golang:alpine
+FROM golang:latest
 MAINTAINER Sherylynn <352281674@qq.com>
 
 # install openssl and the complete wget
