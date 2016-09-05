@@ -5,6 +5,9 @@
     "settings": {
       "auth": "noauth",
       "udp": false
+    },
+    "streamSettings": {
+      "network": "kcp"
     }
   },
   "outbound": {
@@ -32,6 +35,9 @@
           ]
         }
       ]
+    },
+    "streamSettings": {
+      "network": "kcp"
     }
   },
   "outboundDetour": [

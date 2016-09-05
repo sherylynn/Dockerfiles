@@ -17,11 +17,17 @@
       ],
       "detour": {
       }
+    },
+    "streamSettings": {
+      "network": "kcp"
     }
   },
   "outbound": {
     "protocol": "freedom",
-    "settings": {}
+    "settings": {},
+    "streamSettings": {
+      "network": "kcp"
+    }
   },
   "inboundDetour": [
     {
