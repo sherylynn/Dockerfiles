@@ -20,7 +20,7 @@ RUN mv $GOPATH/bin/v2ray-$V2RAY_VERSION-linux-64/v2ray /usr/local/bin/
 
 RUN mkdir -p $V2RAY_CONFIG_CONTENT && \
     mkdir -p $V2RAY_LOG_CONTENT
-COPY server-config $V2RAY_CONFIG_CONTENT/config.json
+COPY server-config.json $V2RAY_CONFIG_CONTENT/config.json
 
 VOLUME $V2RAY_CONTENT
 EXPOSE 9099
