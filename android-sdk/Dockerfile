@@ -1,11 +1,6 @@
 # Pull base image.
-FROM sherylynn/nodejs
+FROM sherylynn/java
 MAINTAINER Sherylynn <352281674@qq.com>
-
-# openjdk-8
-RUN apk --update add --no-cache openjdk8
-ENV JAVA8_HOME /usr/lib/jvm/default-jvm
-ENV JAVA_HOME $JAVA8_HOME
 
 #Installs i386 architecture required for running 32 bit Android tools ????
 RUN apk --update add --no-cache ncurses5-libs libc6-compat libstdc++ zlib-dev
@@ -24,7 +19,8 @@ ENV ANDROID_API_LEVELS android-23
 ENV ANDROID_EXTRA_COMPONENTS extra-android-m2repository,extra-google-m2repository
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-RUN cd /opt && \
+RUN mkdir -p /opt && \
+    cd /opt && \
     wget -q ${ANDROID_SDK_URL} && \
     tar -xzf ${ANDROID_SDK_FILENAME} && \
     rm ${ANDROID_SDK_FILENAME} && \
