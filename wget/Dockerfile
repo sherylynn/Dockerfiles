@@ -1,5 +1,5 @@
 # Pull base image.
-FROM alpine
+FROM sherylynn/bash
 MAINTAINER Sherylynn <352281674@qq.com>
 
 # install openssl and the complete wget

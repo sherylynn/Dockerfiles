@@ -1,8 +1,7 @@
 # Pull base image.
-FROM sherylynn/wget
+FROM sherylynn/python27
 MAINTAINER Sherylynn <352281674@qq.com>
 
-RUN apk --update add --no-cache py-pip
 RUN pip install shadowsocks && \
     pip install supervisor
 # 还不清楚怎么运行好

@@ -1,9 +1,8 @@
 # Pull base image.
-FROM sherylynn/bash
+FROM sherylynn/python27
 MAINTAINER Sherylynn <352281674@qq.com>
 
 # 输入下载地址
-RUN apk --update add --no-cache py-pip
-RUN pip install shadowsocks
-# 还不清楚怎么运行好
-ADD supervisord.conf /etc/supervisord.conf
+RUN apk --update add --no-cache ca-certificates gcc g++ make libc-dev dpkg-dev git curl
+RUN mkdir /home/lynn
+WORKDIR /home/lynn
