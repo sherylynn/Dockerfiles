@@ -7,4 +7,3 @@ RUN apk --update add --no-cache bash
 RUN sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
 
 ENV LANG zh_CN.UTF-8
-WORKDIR /root
